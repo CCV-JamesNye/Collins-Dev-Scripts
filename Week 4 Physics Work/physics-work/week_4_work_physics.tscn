@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://c6fxf2jal30ac"]
+
+[ext_resource type="Texture2D" uid="uid://bpn0gc4dj12rn" path="res://icon.svg" id="1_ul5it"]
+[ext_resource type="Script" uid="uid://ds1kjbarj43n" path="res://player_1.gd" id="2_0x0ut"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0x0ut"]
+normal = Vector2(-0.006896388, -0.9999762)
+distance = -4.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x5dyn"]
+size = Vector2(127, 125.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ul5it"]
+size = Vector2(64, 154)
+
+[node name="Week 4 Work Physics" type="Node2D" unique_id=1102651982]
+metadata/_edit_vertical_guides_ = [-123.0]
+
+[node name="floor" type="StaticBody2D" parent="." unique_id=1534203600]
+position = Vector2(567, 474)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor" unique_id=1279518229]
+shape = SubResource("WorldBoundaryShape2D_0x0ut")
+
+[node name="box" type="RigidBody2D" parent="." unique_id=219896558]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="box" unique_id=872179881]
+position = Vector2(559, 149)
+shape = SubResource("RectangleShape2D_x5dyn")
+
+[node name="Sprite2D" type="Sprite2D" parent="box" unique_id=416422660]
+position = Vector2(559, 149)
+texture = ExtResource("1_ul5it")
+
+[node name="player1" type="CharacterBody2D" parent="." unique_id=1979378821]
+position = Vector2(248, 129)
+collision_layer = 2
+script = ExtResource("2_0x0ut")
+
+[node name="Sprite2D" type="Sprite2D" parent="player1" unique_id=1512436518]
+modulate = Color(0.17885464, 0.4763137, 0.31353164, 1)
+position = Vector2(0, -2)
+scale = Vector2(0.5, 1.2)
+texture = ExtResource("1_ul5it")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player1" unique_id=1036315027]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_ul5it")
