@@ -1,0 +1,127 @@
+[gd_scene format=3 uid="uid://cop8oi1fcgw0a"]
+
+[ext_resource type="Texture2D" uid="uid://brw5yphnpcmry" path="res://Art/Sprites/Background_0.png" id="1_3cfrd"]
+[ext_resource type="Texture2D" uid="uid://df3ry4dkl802l" path="res://Art/Sprites/Background_1.png" id="2_r6lyc"]
+[ext_resource type="Script" uid="uid://btgnjnjgnabqt" path="res://Scripts/player.gd" id="3_mv7tp"]
+[ext_resource type="Texture2D" uid="uid://gckd5c4fqgt4" path="res://Art/Sprites/Skeleton Idle.png" id="4_mv7tp"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ye420"]
+distance = -1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mv7tp"]
+size = Vector2(17, 25)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mv7tp"]
+load_path = "res://.godot/imported/Skeleton Walk.png-177ad690aba451e18d43d4e4119c7b9d.ctex"
+
+[sub_resource type="Animation" id="Animation_mv7tp"]
+resource_name = "Idle"
+length = 1.1
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Idle Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.90000004, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+}
+
+[sub_resource type="Animation" id="Animation_ye420"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Idle Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Walking Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_1x4jf"]
+resource_name = "Walk"
+length = 1.9
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Walking Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.45, 0.6, 0.75, 0.9, 1.05, 1.2, 1.35, 1.5, 1.65, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1x4jf"]
+_data = {
+&"Idle": SubResource("Animation_mv7tp"),
+&"RESET": SubResource("Animation_ye420"),
+&"Walk": SubResource("Animation_1x4jf")
+}
+
+[node name="Visuals_Prime" type="Node2D" unique_id=439685469]
+
+[node name="Night_Sky" type="Sprite2D" parent="." unique_id=1222164424]
+texture_filter = 2
+position = Vector2(159.99998, 90)
+scale = Vector2(0.4166667, 0.43269232)
+texture = ExtResource("1_3cfrd")
+
+[node name="Church_Mausoleum" type="Sprite2D" parent="." unique_id=985009653]
+position = Vector2(160.00002, 105.5)
+scale = Vector2(0.41666666, 0.35817304)
+texture = ExtResource("2_r6lyc")
+
+[node name="Ground" type="StaticBody2D" parent="." unique_id=1134522137]
+position = Vector2(158, 136)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" unique_id=834371628]
+shape = SubResource("WorldBoundaryShape2D_ye420")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1573689479]
+position = Vector2(123, 131)
+script = ExtResource("3_mv7tp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1892004581]
+position = Vector2(2.5, -10.5)
+shape = SubResource("RectangleShape2D_mv7tp")
+
+[node name="Idle Sprite" type="Sprite2D" parent="CharacterBody2D" unique_id=838718834]
+position = Vector2(6, -15)
+texture = ExtResource("4_mv7tp")
+hframes = 11
+
+[node name="Walking Sprite" type="Sprite2D" parent="CharacterBody2D" unique_id=115689623]
+position = Vector2(5, -14.75)
+scale = Vector2(1, 1.0151515)
+texture = SubResource("CompressedTexture2D_mv7tp")
+hframes = 13
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D" unique_id=520619740]
+libraries/ = SubResource("AnimationLibrary_1x4jf")
+autoplay = &"Idle"
