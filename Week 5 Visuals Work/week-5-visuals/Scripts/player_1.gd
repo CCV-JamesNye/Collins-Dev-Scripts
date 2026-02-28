@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
 
-var speed : float = 50
+var speed : float = 25
 @export var gravity : float = 980.0
-@export var jump_force : float = -400
+@export var jump_force : float = -300
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var idle_sprite: Sprite2D = $"Idle Sprite"
 @onready var walking_sprite: Sprite2D = $"Walking Sprite"
@@ -53,3 +53,8 @@ func update_visuals(direction: float) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 		if event.is_action_pressed("jump") and is_on_floor():
 			velocity.y = jump_force
+
+func die () -> void:
+	print ("Player Died")
+	get_tree().call_deferred("reload_current_scene")
+	
