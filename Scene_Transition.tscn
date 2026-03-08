@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://5wbxaya35wds"]
+
+[ext_resource type="Script" uid="uid://q6milcta2hes" path="res://scene_transition.gd" id="1_36olp"]
+
+[sub_resource type="Animation" id="Animation_cdhai"]
+resource_name = "Fade to black"
+length = 0.2
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_wbgtx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_uq55u"]
+resource_name = "fade in"
+length = 0.2
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iducn"]
+_data = {
+&"Fade to black": SubResource("Animation_cdhai"),
+&"RESET": SubResource("Animation_wbgtx"),
+&"fade in": SubResource("Animation_uq55u")
+}
+
+[node name="SceneTransition" type="CanvasLayer" unique_id=577314713]
+script = ExtResource("1_36olp")
+
+[node name="Control" type="Control" parent="." unique_id=1368476749]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 320.0
+offset_bottom = 180.0
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=643645194]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control" unique_id=323106125]
+libraries/ = SubResource("AnimationLibrary_iducn")

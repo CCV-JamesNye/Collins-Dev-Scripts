@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-var speed : float = 25
+var speed : float = 30
 @export var gravity : float = 980.0
 @export var jump_force : float = -300
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
@@ -55,6 +55,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			velocity.y = jump_force
 
 func die () -> void:
-	print ("Player Died")
-	get_tree().call_deferred("reload_current_scene")
+	await SceneTransition.fade_to_black()
+	get_tree().change_scene_to_file("res://game_over.tscn")
+	
 	

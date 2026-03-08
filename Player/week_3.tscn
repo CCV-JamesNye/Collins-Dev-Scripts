@@ -1,7 +1,16 @@
 [gd_scene format=3 uid="uid://cfj81bxrs1kpt"]
 
-[ext_resource type="PackedScene" uid="uid://dx2ppra6ioxki" path="res://Player/player.tscn" id="1_0i85r"]
+[node name="Control" type="Control" unique_id=276944899]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Week 3" type="Node2D" unique_id=457311825]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1708503586]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="Player" parent="." unique_id=1167081614 instance=ExtResource("1_0i85r")]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect" unique_id=1876603601]

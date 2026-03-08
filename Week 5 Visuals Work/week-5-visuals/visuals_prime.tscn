@@ -1,20 +1,19 @@
 [gd_scene format=3 uid="uid://cop8oi1fcgw0a"]
 
-[ext_resource type="Texture2D" uid="uid://brw5yphnpcmry" path="res://Art/Sprites/Background_0.png" id="1_3cfrd"]
-[ext_resource type="Texture2D" uid="uid://df3ry4dkl802l" path="res://Art/Sprites/Background_1.png" id="2_r6lyc"]
-[ext_resource type="Script" uid="uid://bd6n602fdlsub" path="res://Scripts/player_1.gd" id="3_1x4jf"]
-[ext_resource type="Texture2D" uid="uid://gckd5c4fqgt4" path="res://Art/Sprites/Skeleton Idle.png" id="4_mv7tp"]
-[ext_resource type="Script" uid="uid://c4ny0sc7ks8yl" path="res://Scripts/area_2d.gd" id="5_1x4jf"]
-[ext_resource type="Texture2D" uid="uid://tpo1gn4e7ulp" path="res://Art/Sprites/platform tile 1.png" id="6_gxhti"]
-[ext_resource type="Texture2D" uid="uid://c7867y5wdndci" path="res://Art/Sprites/Tiles.png" id="6_p8omr"]
-[ext_resource type="Texture2D" uid="uid://dsjj1eok4sonw" path="res://Art/Sprites/pillar 1.png" id="8_p8omr"]
-[ext_resource type="Script" uid="uid://bsq63o5u0242l" path="res://goal.gd" id="9_j776i"]
+[ext_resource type="Texture2D" uid="uid://brw5yphnpcmry" path="res://Week 5 Visuals Work/week-5-visuals/Art/Sprites/Background_0.png" id="1_3cfrd"]
+[ext_resource type="Script" uid="uid://bhq7wprypgo55" path="res://Week 5 Visuals Work/week-5-visuals/visuals_prime.gd" id="1_acovw"]
+[ext_resource type="Texture2D" uid="uid://df3ry4dkl802l" path="res://Week 5 Visuals Work/week-5-visuals/Art/Sprites/Background_1.png" id="2_r6lyc"]
+[ext_resource type="Script" uid="uid://bd6n602fdlsub" path="res://Week 5 Visuals Work/week-5-visuals/Scripts/player_1.gd" id="3_1x4jf"]
+[ext_resource type="Texture2D" uid="uid://gckd5c4fqgt4" path="res://Week 5 Visuals Work/week-5-visuals/Art/Sprites/Skeleton Idle.png" id="4_mv7tp"]
+[ext_resource type="Script" uid="uid://c4ny0sc7ks8yl" path="res://Week 5 Visuals Work/week-5-visuals/Scripts/area_2d.gd" id="5_1x4jf"]
+[ext_resource type="Texture2D" uid="uid://cr1wpqtqbvmy3" path="res://Week 5 Visuals Work/week-5-visuals/Art/Sprites/Skeleton Walk.png" id="5_13wia"]
+[ext_resource type="Texture2D" uid="uid://tpo1gn4e7ulp" path="res://Week 5 Visuals Work/week-5-visuals/Art/Sprites/platform tile 1.png" id="6_gxhti"]
+[ext_resource type="Texture2D" uid="uid://c7867y5wdndci" path="res://Week 5 Visuals Work/week-5-visuals/Art/Sprites/Tiles.png" id="6_p8omr"]
+[ext_resource type="Texture2D" uid="uid://dsjj1eok4sonw" path="res://Week 5 Visuals Work/week-5-visuals/Art/Sprites/pillar 1.png" id="8_p8omr"]
+[ext_resource type="Script" uid="uid://bsq63o5u0242l" path="res://Week 5 Visuals Work/week-5-visuals/goal.gd" id="9_j776i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mv7tp"]
 size = Vector2(17, 25)
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mv7tp"]
-load_path = "res://.godot/imported/Skeleton Walk.png-177ad690aba451e18d43d4e4119c7b9d.ctex"
 
 [sub_resource type="Animation" id="Animation_mv7tp"]
 resource_name = "Idle"
@@ -63,9 +62,9 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_1x4jf"]
 resource_name = "Walk"
-length = 1.9
+length = 1.65
 loop_mode = 1
-step = 0.0166
+step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -73,7 +72,7 @@ tracks/0/path = NodePath("Walking Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.15, 0.3, 0.45, 0.6, 0.75, 0.9, 1.05, 1.2, 1.35, 1.5, 1.65, 1.8),
+"times": PackedFloat32Array(0, 0.13, 0.26, 0.39, 0.52, 0.65, 0.78, 0.92, 1.05, 1.18, 1.32, 1.45, 1.58),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
@@ -97,18 +96,34 @@ size = Vector2(320, 14)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mp0hg"]
 size = Vector2(62, 10)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_j776i"]
-size = Vector2(80, 15)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qxx24"]
+size = Vector2(62, 10)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ltgug"]
-size = Vector2(12, 18.5)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_13wia"]
+size = Vector2(62, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j776i"]
+size = Vector2(80, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_acovw"]
+size = Vector2(5.55816, 23.334541)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gsuer"]
+size = Vector2(5.656823, 21.719559)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x4p1y"]
+size = Vector2(8.485277, 18.891201)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d43vq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vw37f"]
 size = Vector2(78, 15)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_d43vq"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ltgug"]
+size = Vector2(8.485277, 18.891201)
 
 [node name="Visuals_Prime" type="Node2D" unique_id=439685469]
+script = ExtResource("1_acovw")
 
 [node name="Night_Sky" type="Sprite2D" parent="." unique_id=1222164424]
 texture_filter = 2
@@ -127,38 +142,41 @@ position = Vector2(30, 159)
 collision_layer = 2
 script = ExtResource("3_1x4jf")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player1" unique_id=1892004581]
+[node name="player1 col" type="CollisionShape2D" parent="player1" unique_id=1892004581]
 position = Vector2(2.5, -10.5)
 shape = SubResource("RectangleShape2D_mv7tp")
 
 [node name="Idle Sprite" type="Sprite2D" parent="player1" unique_id=838718834]
+z_index = 5
 position = Vector2(6, -15)
 texture = ExtResource("4_mv7tp")
 hframes = 11
 
 [node name="Walking Sprite" type="Sprite2D" parent="player1" unique_id=115689623]
-position = Vector2(5, -16)
-scale = Vector2(1, 1.0151515)
-texture = SubResource("CompressedTexture2D_mv7tp")
+z_index = 5
+position = Vector2(5, -15.000007)
+scale = Vector2(0.99999994, 1.0303031)
+texture = ExtResource("5_13wia")
 hframes = 13
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="player1" unique_id=520619740]
 libraries/ = SubResource("AnimationLibrary_1x4jf")
 autoplay = &"Idle"
 
-[node name="Area2D" type="Area2D" parent="." unique_id=924712095]
+[node name="death box" type="Area2D" parent="." unique_id=924712095]
 position = Vector2(159, 189)
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("5_1x4jf")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=635566108]
+[node name="death box col" type="CollisionShape2D" parent="death box" unique_id=635566108]
 shape = SubResource("RectangleShape2D_p8omr")
 
 [node name="platform 2" type="StaticBody2D" parent="." unique_id=599873710]
+z_index = 2
 position = Vector2(165.75, 122.5)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="platform 2" unique_id=1683610970]
+[node name="plat 2 col" type="CollisionShape2D" parent="platform 2" unique_id=1683610970]
 position = Vector2(0.25, -2.5)
 shape = SubResource("RectangleShape2D_mp0hg")
 
@@ -167,34 +185,98 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("6_p8omr")
 flip_h = true
 
+[node name="platform 4" type="StaticBody2D" parent="." unique_id=71374168]
+z_index = 2
+position = Vector2(196, 177)
+
+[node name="plat 4 col" type="CollisionShape2D" parent="platform 4" unique_id=1583601951]
+position = Vector2(0.25, -2.5)
+shape = SubResource("RectangleShape2D_qxx24")
+
+[node name="Sprite2D" type="Sprite2D" parent="platform 4" unique_id=1716393190]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_p8omr")
+flip_h = true
+
+[node name="platform 3" type="StaticBody2D" parent="." unique_id=1697252506]
+z_index = 2
+position = Vector2(289, 172)
+
+[node name="plat 3 col" type="CollisionShape2D" parent="platform 3" unique_id=399793313]
+position = Vector2(0.25, -2.5)
+shape = SubResource("RectangleShape2D_13wia")
+
+[node name="Sprite2D" type="Sprite2D" parent="platform 3" unique_id=1000299683]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_p8omr")
+
 [node name="platform 1" type="StaticBody2D" parent="." unique_id=1553603816]
-z_index = 1
+z_index = 2
 position = Vector2(142, 156)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="platform 1" unique_id=431011062]
-position = Vector2(0, 15.5)
+[node name="plat 1 col" type="CollisionShape2D" parent="platform 1" unique_id=431011062]
+position = Vector2(0, 16)
 shape = SubResource("RectangleShape2D_j776i")
 
 [node name="Sprite2D" type="Sprite2D" parent="platform 1" unique_id=1990435874]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("6_gxhti")
 
-[node name="Pillar" type="StaticBody2D" parent="." unique_id=1516209712]
-position = Vector2(112, 150)
+[node name="Pillar3" type="StaticBody2D" parent="." unique_id=329727851]
+z_index = 3
+position = Vector2(106.00001, 152)
+rotation = 0.7853982
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pillar" unique_id=1880882157]
-position = Vector2(0, 1.25)
-shape = SubResource("RectangleShape2D_ltgug")
+[node name="pill 3 col" type="CollisionShape2D" parent="Pillar3" unique_id=636692617]
+position = Vector2(3.486206, 1.7677612)
+shape = SubResource("RectangleShape2D_acovw")
 
-[node name="Sprite2D" type="Sprite2D" parent="Pillar" unique_id=1982836004]
+[node name="Sprite2D" type="Sprite2D" parent="Pillar3" unique_id=1471447243]
+z_index = 1
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("8_p8omr")
 
-[node name="platfor 1_5" type="StaticBody2D" parent="." unique_id=181342975]
+[node name="Pillar4" type="StaticBody2D" parent="." unique_id=1779541968]
+z_index = 3
+position = Vector2(127, 153.00002)
+rotation = -0.7853982
+
+[node name="pill 4 col" type="CollisionShape2D" parent="Pillar4" unique_id=941430332]
+position = Vector2(-2.8283997, -0.45394897)
+shape = SubResource("RectangleShape2D_gsuer")
+
+[node name="Sprite2D" type="Sprite2D" parent="Pillar4" unique_id=1019107389]
 z_index = 1
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_p8omr")
+
+[node name="Pillar2" type="StaticBody2D" parent="." unique_id=1487551847]
+position = Vector2(268, 169)
+rotation = 1.5707964
+
+[node name="pill 2 col" type="CollisionShape2D" parent="Pillar2" unique_id=1384410211]
+position = Vector2(0.5, -0.03186035)
+shape = SubResource("RectangleShape2D_x4p1y")
+
+[node name="Sprite2D" type="Sprite2D" parent="Pillar2" unique_id=2045337660]
+position = Vector2(-0.3475952, 0)
+scale = Vector2(0.4732619, 0.5)
+texture = ExtResource("8_p8omr")
+
+[node name="goal" type="Area2D" parent="." unique_id=1270472388]
+position = Vector2(309, 152)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("9_j776i")
+
+[node name="goal col" type="CollisionShape2D" parent="goal" unique_id=1602843523]
+shape = SubResource("RectangleShape2D_d43vq")
+
+[node name="platfor 1_5" type="StaticBody2D" parent="." unique_id=181342975]
+z_index = 2
 position = Vector2(62.4, 156)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="platfor 1_5" unique_id=1713737819]
+[node name="plat 1_5 col" type="CollisionShape2D" parent="platfor 1_5" unique_id=1713737819]
 position = Vector2(-0.40000153, 15.5)
 shape = SubResource("RectangleShape2D_vw37f")
 
@@ -203,11 +285,16 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("6_gxhti")
 flip_h = true
 
-[node name="Area2D2" type="Area2D" parent="." unique_id=1270472388]
-position = Vector2(187, 104)
-collision_layer = 0
-collision_mask = 2
-script = ExtResource("9_j776i")
+[node name="Pillar" type="StaticBody2D" parent="." unique_id=1516209712]
+z_index = 3
+position = Vector2(84, 161)
+rotation = 1.5707964
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=1602843523]
-shape = SubResource("RectangleShape2D_d43vq")
+[node name="pllar col" type="CollisionShape2D" parent="Pillar" unique_id=1880882157]
+position = Vector2(0.9911194, 0.76623535)
+shape = SubResource("RectangleShape2D_ltgug")
+
+[node name="Sprite2D" type="Sprite2D" parent="Pillar" unique_id=1982836004]
+z_index = 1
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_p8omr")

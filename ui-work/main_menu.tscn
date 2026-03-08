@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://e2q382x3onpp"]
+
+[ext_resource type="Script" uid="uid://y2carx0pvt0h" path="res://ui-work/main_menu.gd" id="1_06t4h"]
+[ext_resource type="Texture2D" uid="uid://brw5yphnpcmry" path="res://Week 5 Visuals Work/week-5-visuals/Art/Sprites/Background_0.png" id="2_b6rmj"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wx11p"]
+texture = ExtResource("2_b6rmj")
+
+[node name="Main Menu" type="Control" unique_id=1681873497]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_06t4h")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1472195170]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.01129358, 0.11858204, 0.15053664, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=423100746]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Panel" type="Panel" parent="MarginContainer" unique_id=1222436636]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_wx11p")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel" unique_id=458968497]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer" unique_id=990800775]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="my first game" type="Label" parent="MarginContainer/Panel/MarginContainer/VBoxContainer" unique_id=823989668]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "My First Game"
+
+[node name="start_game" type="Button" parent="MarginContainer/Panel/MarginContainer/VBoxContainer" unique_id=1244111794]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 6
+text = "Start Game"
+
+[node name="quit_game" type="Button" parent="MarginContainer/Panel/MarginContainer/VBoxContainer" unique_id=555630823]
+custom_minimum_size = Vector2(50, 10)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 6
+text = "Quit Game"

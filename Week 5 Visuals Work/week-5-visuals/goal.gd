@@ -13,4 +13,5 @@ func _process(_delta: float) -> void:
 
 func _check_for_win (body : Node2D) -> void:
 	if body.name == "player1":
-		print ("PLAYER WINS")
+		await SceneTransition.fade_to_black()
+		get_tree().change_scene_to_file("res://Victory_screen.tscn")
