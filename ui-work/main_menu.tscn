@@ -60,7 +60,7 @@ size_flags_vertical = 4
 [node name="my first game" type="Label" parent="MarginContainer/Panel/MarginContainer/VBoxContainer" unique_id=823989668]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "My First Game"
+text = "Rest for the Wicked"
 
 [node name="start_game" type="Button" parent="MarginContainer/Panel/MarginContainer/VBoxContainer" unique_id=1244111794]
 custom_minimum_size = Vector2(50, 0)

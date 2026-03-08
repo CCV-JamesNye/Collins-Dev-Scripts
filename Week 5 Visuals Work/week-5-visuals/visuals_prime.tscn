@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://c7867y5wdndci" path="res://Week 5 Visuals Work/week-5-visuals/Art/Sprites/Tiles.png" id="6_p8omr"]
 [ext_resource type="Texture2D" uid="uid://dsjj1eok4sonw" path="res://Week 5 Visuals Work/week-5-visuals/Art/Sprites/pillar 1.png" id="8_p8omr"]
 [ext_resource type="Script" uid="uid://bsq63o5u0242l" path="res://Week 5 Visuals Work/week-5-visuals/goal.gd" id="9_j776i"]
+[ext_resource type="Texture2D" uid="uid://bsc1ncxcobjbj" path="res://Week 5 Visuals Work/week-5-visuals/Art/Sprites/CoffinOpen.png" id="12_gsuer"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mv7tp"]
 size = Vector2(17, 25)
@@ -115,6 +116,7 @@ size = Vector2(5.656823, 21.719559)
 size = Vector2(8.485277, 18.891201)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d43vq"]
+size = Vector2(20, 37)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vw37f"]
 size = Vector2(78, 15)
@@ -270,7 +272,13 @@ collision_mask = 2
 script = ExtResource("9_j776i")
 
 [node name="goal col" type="CollisionShape2D" parent="goal" unique_id=1602843523]
+position = Vector2(0, -8.5)
 shape = SubResource("RectangleShape2D_d43vq")
+
+[node name="Sprite2D" type="Sprite2D" parent="goal" unique_id=269370851]
+position = Vector2(-8.999999, -7.9999995)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("12_gsuer")
 
 [node name="platfor 1_5" type="StaticBody2D" parent="." unique_id=181342975]
 z_index = 2

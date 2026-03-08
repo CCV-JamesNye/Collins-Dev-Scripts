@@ -1,3 +1,4 @@
+Sprite2D
 VBoxContainer
 Label
 ColorRect
@@ -7,6 +8,5 @@ MarginContainer
 Control
 CanvasLayer
 AnimationPlayer
-Sprite2D
 CollisionShape2D
 Node2D

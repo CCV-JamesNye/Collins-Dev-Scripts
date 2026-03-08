@@ -1,32 +1,39 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1772994579
+::res://::1772999659
+game_over.gd::GDScript::7101924011265268663::1772999186::0::1::::<>CanvasLayer<><>0<>0<><>::
+game_over.tscn::PackedScene::1399091675705134183::1772999307::0::1::::<><><>0<>0<><>::uid://c8ghwenpugmo2::::res://game_over.gd
 icon.svg::CompressedTexture2D::2011097312461115261::1772986423::1771251098::1::::<><><>0<>0<>299787ab6fc78912c573bc2394105ee1<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+pause_menu.gd::GDScript::1827647621074863230::1772996458::0::1::::<>CanvasLayer<><>0<>0<><>::
+Pause_Menu.tscn::PackedScene::6864012086444555596::1772996123::0::1::::<><><>0<>0<><>::uid://1bldbhyb1ww1::::res://pause_menu.gd
 scene_transition.gd::GDScript::1187760680559610862::1772994559::0::1::::<>CanvasLayer<><>0<>0<><>::
-Scene_Transition.tscn::PackedScene::2151183447096793728::1772994570::0::1::::<><><>0<>0<><>::uid://q6milcta2hes::::res://scene_transition.gd
+Scene_Transition.tscn::PackedScene::2151183447096793728::1772999316::0::1::::<><><>0<>0<><>::uid://q6milcta2hes::::res://scene_transition.gd
+Victory_screen.tscn::PackedScene::3510549117404814423::1772999310::0::1::::<><><>0<>0<><>::uid://c8ghwenpugmo2::::res://game_over.gd
 ::res://Player/::1772986994
 old player.tscn::PackedScene::8830282090230450824::1771267621::0::1::::<><><>0<>0<><>::uid://3wgqjvelioif::::res://icon.svg<>uid://dtisunvpupg78::::res://Player/Scripts/sprite_2d.gd
 sprite_2d.gd::GDScript::8510494439935591249::1771256161::0::1::::<>Sprite2D<><>0<>0<><>::
 week_3.tscn::PackedScene::5144415165617064585::1772986994::0::1::::<><><>0<>0<><>::
-::res://ui-work/::1772994559
+::res://ui-work/::1772999322
 icon.svg::CompressedTexture2D::6721824246598298302::1772820179::1772986836::1::::<><><>0<>0<>927e6f5f42bb431ca7f9d71a10b5036d<>res://.godot/imported/icon.svg-964fcb1a3be7ca11daa2c89eabfdfc75.ctex::
-main_menu.gd::GDScript::1740392810242156957::1772994559::0::1::::<>Control<><>0<>0<><>::
-main_menu.tscn::PackedScene::337516824088615953::1772994559::0::1::::<><><>0<>0<><>::uid://y2carx0pvt0h::::res://ui-work/main_menu.gd<>uid://brw5yphnpcmry::::res://Week 5 Visuals Work/week-5-visuals/Art/Sprites/Background_0.png
+main_menu.gd::GDScript::1740392810242156957::1772997577::0::1::::<>Control<><>0<>0<><>::
+main_menu.tscn::PackedScene::337516824088615953::1772999322::0::1::::<><><>0<>0<><>::uid://y2carx0pvt0h::::res://ui-work/main_menu.gd<>uid://brw5yphnpcmry::::res://Week 5 Visuals Work/week-5-visuals/Art/Sprites/Background_0.png
 ::res://Week 4 Physics Work/::1771963139
 ::res://Week 5 Visuals Work/::1772135278
-::res://Week 5 Visuals Work/week-5-visuals/::1772992181
-goal.gd::GDScript::3684782924861984893::1772309679::0::1::::<>Area2D<><>0<>0<><>::
+::res://Week 5 Visuals Work/week-5-visuals/::1772999319
+goal.gd::GDScript::3684782924861984893::1772997935::0::1::::<>Area2D<><>0<>0<><>::
 icon.svg::CompressedTexture2D::3863902224381070333::1772135278::1772988026::1::::<><><>0<>0<>3c81cc7aa04bda5aa697fc777afb1731<>res://.godot/imported/icon.svg-1233d58e831768ab717a1aded96d40c9.ctex::
-visuals_prime.tscn::PackedScene::5788479967087341850::1772992181::0::1::::<><><>0<>0<><>::uid://brw5yphnpcmry::::res://Week 5 Visuals Work/week-5-visuals/Art/Sprites/Background_0.png<>uid://df3ry4dkl802l::::res://Week 5 Visuals Work/week-5-visuals/Art/Sprites/Background_1.png<>uid://bd6n602fdlsub::::res://Week 5 Visuals Work/week-5-visuals/Scripts/player_1.gd<>uid://gckd5c4fqgt4::::res://Week 5 Visuals Work/week-5-visuals/Art/Sprites/Skeleton Idle.png<>uid://c4ny0sc7ks8yl::::res://Week 5 Visuals Work/week-5-visuals/Scripts/area_2d.gd<>uid://cr1wpqtqbvmy3::::res://Week 5 Visuals Work/week-5-visuals/Art/Sprites/Skeleton Walk.png<>uid://tpo1gn4e7ulp::::res://Week 5 Visuals Work/week-5-visuals/Art/Sprites/platform tile 1.png<>uid://c7867y5wdndci::::res://Week 5 Visuals Work/week-5-visuals/Art/Sprites/Tiles.png<>uid://dsjj1eok4sonw::::res://Week 5 Visuals Work/week-5-visuals/Art/Sprites/pillar 1.png<>uid://bsq63o5u0242l::::res://Week 5 Visuals Work/week-5-visuals/goal.gd
+visuals_prime.gd::GDScript::2912755679681394226::1772994852::0::1::::<>Node2D<><>0<>0<><>::
+visuals_prime.tscn::PackedScene::5788479967087341850::1772999319::0::1::::<><><>0<>0<><>::uid://brw5yphnpcmry::::res://Week 5 Visuals Work/week-5-visuals/Art/Sprites/Background_0.png<>uid://bhq7wprypgo55::::res://Week 5 Visuals Work/week-5-visuals/visuals_prime.gd<>uid://df3ry4dkl802l::::res://Week 5 Visuals Work/week-5-visuals/Art/Sprites/Background_1.png<>uid://bd6n602fdlsub::::res://Week 5 Visuals Work/week-5-visuals/Scripts/player_1.gd<>uid://gckd5c4fqgt4::::res://Week 5 Visuals Work/week-5-visuals/Art/Sprites/Skeleton Idle.png<>uid://c4ny0sc7ks8yl::::res://Week 5 Visuals Work/week-5-visuals/Scripts/area_2d.gd<>uid://cr1wpqtqbvmy3::::res://Week 5 Visuals Work/week-5-visuals/Art/Sprites/Skeleton Walk.png<>uid://tpo1gn4e7ulp::::res://Week 5 Visuals Work/week-5-visuals/Art/Sprites/platform tile 1.png<>uid://c7867y5wdndci::::res://Week 5 Visuals Work/week-5-visuals/Art/Sprites/Tiles.png<>uid://dsjj1eok4sonw::::res://Week 5 Visuals Work/week-5-visuals/Art/Sprites/pillar 1.png<>uid://bsq63o5u0242l::::res://Week 5 Visuals Work/week-5-visuals/goal.gd
 ::res://Week 5 Visuals Work/week-5-visuals/Art/::1772137080
-::res://Week 5 Visuals Work/week-5-visuals/Art/Sprites/::1772991782
+::res://Week 5 Visuals Work/week-5-visuals/Art/Sprites/::1772999693
 Background_0.png::CompressedTexture2D::3626912504240359786::1772137289::1772988026::1::::<><><>0<>0<>31fc2862bdb163ca1e016876609e8d9b<>res://.godot/imported/Background_0.png-d1d4643383a76c4753e81a6c3f5b6835.ctex::
 Background_1.png::CompressedTexture2D::7569085422595834429::1772137289::1772988026::1::::<><><>0<>0<>bc52ec353addc5496abe575d9bc81f95<>res://.godot/imported/Background_1.png-112d4eaf35875f1a66d0c56c9b83a7bb.ctex::
+CoffinOpen.png::CompressedTexture2D::3655550622505326391::1772999636::1772999695::1::::<><><>0<>0<>c4f23af56029f4cca962c7780994d36a<>res://.godot/imported/CoffinOpen.png-3a0cd10537997fbd9b2576b1e7440d82.ctex::
 pillar 1.png::CompressedTexture2D::8441833752141344040::1772308920::1772988026::1::::<><><>0<>0<>6ef9929022567959deea565e0dbc09e0<>res://.godot/imported/pillar 1.png-d7a9621d7817d67231dd265871511e24.ctex::
 platform tile 1.png::CompressedTexture2D::1365450500520581877::1772306401::1772988026::1::::<><><>0<>0<>a07a729416c9eddd6924c182a6dd67a3<>res://.godot/imported/platform tile 1.png-6e80f8caac4306dd2d6091ba17bd8585.ctex::
 platform tile 2.png::CompressedTexture2D::6268554256710159291::1772306465::1772988026::1::::<><><>0<>0<>41024e9acdcdfad7d544ca9048d7cd0c<>res://.godot/imported/platform tile 2.png-258d07b0ca1afd16494ae07a3d154fbc.ctex::
 Skeleton Idle.png::CompressedTexture2D::425875924760751787::1493958152::1772988026::1::::<><><>0<>0<>9295e61d8e51ecdb0a0fd21b721be888<>res://.godot/imported/Skeleton Idle.png-91a87120306c9bf0a44f28b451d18bd2.ctex::
 Skeleton Walk.png::CompressedTexture2D::6021088962041771892::1493958175::1772988026::1::::<><><>0<>0<>e68582c75216152ce538184d2db3f4a9<>res://.godot/imported/Skeleton Walk.png-afc6a312f6486f123a784c6bd44d7eb3.ctex::
 Tiles.png::CompressedTexture2D::7088949509776566832::1772306936::1772988026::1::::<><><>0<>0<>803a0c472a12d4b10825bc9180de2985<>res://.godot/imported/Tiles.png-2bbc4dfa0dd830384244192790a24089.ctex::
-::res://Week 5 Visuals Work/week-5-visuals/Scripts/::1772991853
+::res://Week 5 Visuals Work/week-5-visuals/Scripts/::1772999267
 area_2d.gd::GDScript::6836657546343890671::1772307887::0::1::::<>Area2D<><>0<>0<><>::
-player_1.gd::GDScript::2661828960525179865::1772991853::0::1::::<>CharacterBody2D<><>0<>0<><>::
+player_1.gd::GDScript::2661828960525179865::1772999267::0::1::::<>CharacterBody2D<><>0<>0<><>::
