@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://b3toj5jkxixgv"]
+
+[ext_resource type="Texture2D" uid="uid://c6seqbp3ad3ij" path="res://icon.svg" id="1_wtcfe"]
+[ext_resource type="Script" uid="uid://dbcwg6swe2owi" path="res://enemy_1.gd" id="2_0e48y"]
+[ext_resource type="Script" uid="uid://c7jw14k3hnbs7" path="res://player_1.gd" id="2_0hol4"]
+[ext_resource type="Texture2D" uid="uid://sg01t32vy3td" path="res://icon.png" id="3_epypp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0e48y"]
+size = Vector2(113, 20.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_epypp"]
+size = Vector2(16, 36)
+
+[sub_resource type="Animation" id="Animation_0e48y"]
+resource_name = "idle"
+
+[sub_resource type="Animation" id="Animation_epypp"]
+resource_name = "walk"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0hol4"]
+_data = {
+&"idle": SubResource("Animation_0e48y"),
+&"walk": SubResource("Animation_epypp")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q6r6c"]
+radius = 100.0
+
+[node name="Node2D" type="Node2D" unique_id=152987543]
+texture_filter = 1
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1889638692]
+position = Vector2(68, 167)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=555340841]
+shape = SubResource("RectangleShape2D_0e48y")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1902222004]
+scale = Vector2(1.0859374, 0.18749996)
+texture = ExtResource("1_wtcfe")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=199115632]
+position = Vector2(173, 111)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=2076732353]
+position = Vector2(0, -0.625)
+shape = SubResource("RectangleShape2D_0e48y")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2" unique_id=1402445251]
+scale = Vector2(0.9023438, 0.18749996)
+texture = ExtResource("1_wtcfe")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=573675184]
+position = Vector2(262, 168)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=1275816354]
+shape = SubResource("RectangleShape2D_0e48y")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3" unique_id=466702795]
+scale = Vector2(0.9023438, 0.18749996)
+texture = ExtResource("1_wtcfe")
+
+[node name="player_1" type="CharacterBody2D" parent="." unique_id=349332003]
+position = Vector2(25, 135)
+collision_layer = 2
+script = ExtResource("2_0hol4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_1" unique_id=410754186]
+shape = SubResource("RectangleShape2D_epypp")
+
+[node name="Sprite2D" type="Sprite2D" parent="player_1" unique_id=1322349288]
+scale = Vector2(0.1328125, 0.2890625)
+texture = ExtResource("1_wtcfe")
+
+[node name="enemy1" type="CharacterBody2D" parent="." unique_id=390271149]
+position = Vector2(176, 80)
+script = ExtResource("2_0e48y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy1" unique_id=1365880978]
+shape = SubResource("RectangleShape2D_epypp")
+
+[node name="Sprite2D" type="Sprite2D" parent="enemy1" unique_id=1073327963]
+modulate = Color(1, 0, 0.25882354, 1)
+scale = Vector2(0.1328125, 0.2890625)
+texture = ExtResource("3_epypp")
+
+[node name="floor detector" type="RayCast2D" parent="enemy1" unique_id=992808177]
+position = Vector2(8, 17)
+target_position = Vector2(0, 5)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="enemy1" unique_id=1813335074]
+libraries/ = SubResource("AnimationLibrary_0hol4")
+
+[node name="detection range" type="Area2D" parent="enemy1" unique_id=964245870]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy1/detection range" unique_id=829350187]
+position = Vector2(0.5, 0)
+shape = SubResource("CircleShape2D_q6r6c")
+
+[node name="ChaseTimer" type="Timer" parent="enemy1" unique_id=1555567924]
+wait_time = 2.0
+one_shot = true
+
+[node name="IdleTimer" type="Timer" parent="enemy1" unique_id=341652443]
