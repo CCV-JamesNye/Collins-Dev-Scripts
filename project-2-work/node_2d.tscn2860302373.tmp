@@ -51,7 +51,7 @@ radius = 100.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d21ai"]
 size = Vector2(16, 36)
 
-[node name="Project_2" type="Node2D" unique_id=152987543]
+[node name="Node2D" type="Node2D" unique_id=152987543]
 texture_filter = 1
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1889638692]
@@ -109,14 +109,13 @@ script = ExtResource("3_q6r6c")
 shape = SubResource("RectangleShape2D_kdubu")
 debug_color = Color(0.87641364, 0.3289491, 0.2685695, 0.41960785)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="player_1/Hurt Box" unique_id=1031418204]
-layer = 0
+[node name="CanvasLayer" type="CanvasLayer" parent="player_1" unique_id=1031418204]
 
-[node name="ProgressBar" type="ProgressBar" parent="player_1/Hurt Box" unique_id=1904997194]
-offset_left = -13.0
-offset_top = -118.0
-offset_right = 96.0
-offset_bottom = -108.0
+[node name="ProgressBar" type="ProgressBar" parent="player_1/CanvasLayer" unique_id=1904997194]
+offset_left = 12.0
+offset_top = 17.0
+offset_right = 121.0
+offset_bottom = 27.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_kdubu")
 max_value = 3.0
 value = 3.0

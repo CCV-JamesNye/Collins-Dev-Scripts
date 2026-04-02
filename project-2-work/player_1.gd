@@ -1,17 +1,30 @@
 class_name player_1
 extends CharacterBody2D
 
+signal health_update (int)
 
 var speed : float = 200
 @export var gravity : float = 980.0
 @export var jump_force : float = -400
+@onready var hurt_box: Area2D = $"Hurt Box"
 
-# Apply Movement
+
+var health : int = 3
+var max_health : int = 3
+
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	hurt_box.take_damage.connect(_take_damage)
 	pass # Replace with function body.
+
+func _take_damage (damage: int) -> void:
+	health -= damage
+	printerr (health)
+	health_update.emit( health )
+	if health <= 0:
+		die()
 
 func _physics_process(delta: float) -> void:
 	if !is_on_floor():
@@ -34,4 +47,4 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func die () -> void:
 	print ("Player Died")
-	get_tree().call_deferred("reload_current_scene")
+	SceneTransition.load_scene(get_tree().current_scene.scene_file_path)
