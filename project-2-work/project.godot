@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Project 2 Work"
-run/main_scene="uid://b3toj5jkxixgv"
+run/main_scene="uid://e2q382x3onpp"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -19,7 +19,7 @@ config/icon="res://icon.svg"
 
 PauseMenu="*uid://caji0k2mdffnb"
 SceneTransition="*uid://d2axg40htfbrt"
-MainMenu="*uid://e2q382x3onpp"
+GameManager="*uid://bgv5m4mewyh07"
 
 [display]
 

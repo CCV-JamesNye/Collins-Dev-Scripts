@@ -69,8 +69,9 @@ func _check_for_player (body : Node2D) -> void:
 
 func _player_left (body : Node2D) -> void:
 	if body is player_1:
-		chase_timer.start()
-		
+		if is_inside_tree() and chase_timer.is_inside_tree():
+			chase_timer.start()
+
 func _stop_chasing () -> void:
 	current_state = STATE.IDLE
 	idle_timer.start()

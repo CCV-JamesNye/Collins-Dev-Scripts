@@ -11,7 +11,7 @@ var speed : float = 200
 
 var health : int = 3
 var max_health : int = 3
-
+var lives : int = 3
 
 
 # Called when the node enters the scene tree for the first time.
@@ -46,5 +46,8 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func die () -> void:
-	print ("Player Died")
-	SceneTransition.load_scene(get_tree().current_scene.scene_file_path)
+	if GameManager.is_game_over():
+		pass
+	else:
+		print ("Player Died")
+		SceneTransition.load_scene(get_tree().current_scene.scene_file_path)
