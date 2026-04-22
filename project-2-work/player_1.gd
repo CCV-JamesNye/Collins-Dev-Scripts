@@ -2,12 +2,17 @@ class_name player_1
 extends CharacterBody2D
 
 signal health_update (int)
+signal player_hurt
 
 var speed : float = 200
 @export var gravity : float = 980.0
 @export var jump_force : float = -400
 @onready var hurt_box: Area2D = $"Hurt Box"
-
+@onready var collect_sound: AudioStreamPlayer2D = $"Collectsound"
+@onready var hurt_sound: AudioStreamPlayer2D = $"Hurt sound"
+@onready var jump_sound: AudioStreamPlayer2D = $"Jump sound"
+@onready var effect_player: AnimationPlayer = $"Effect Player"
+@onready var hurt_overlay: CanvasLayer = $"../player_1/Hurt Box/hurt overlay"
 
 var health : int = 3
 var max_health : int = 3
@@ -17,11 +22,15 @@ var lives : int = 3
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	hurt_box.take_damage.connect(_take_damage)
+	GameManager.coin_pickup.connect( _play_coin_audio )
 	pass # Replace with function body.
 
 func _take_damage (damage: int) -> void:
 	health -= damage
 	printerr (health)
+	hurt_overlay.screen_flash()
+	player_hurt.emit()
+	effect_player.play("Hurt sound")
 	health_update.emit( health )
 	if health <= 0:
 		die()
@@ -43,6 +52,7 @@ func _physics_process(delta: float) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 		if event.is_action_pressed("jump") and is_on_floor():
 			velocity.y = jump_force
+			jump_sound.play()
 
 
 func die () -> void:
@@ -51,3 +61,8 @@ func die () -> void:
 	else:
 		print ("Player Died")
 		SceneTransition.load_scene(get_tree().current_scene.scene_file_path)
+
+func _play_coin_audio() -> void:
+	if $"Collectsound".is_playing():
+		return
+	$"Collectsound".play()

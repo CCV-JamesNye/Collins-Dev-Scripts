@@ -5,13 +5,9 @@
 [ext_resource type="Script" uid="uid://c7jw14k3hnbs7" path="res://player_1.gd" id="2_0hol4"]
 [ext_resource type="Texture2D" uid="uid://sg01t32vy3td" path="res://icon.png" id="3_epypp"]
 [ext_resource type="Script" uid="uid://de4gdiwv33wcg" path="res://Hurtbox.gd" id="3_q6r6c"]
-[ext_resource type="AudioStream" uid="uid://bu8364kw2oihu" path="res://audio/effects/sounds/coin.wav" id="4_4d7sh"]
-[ext_resource type="Script" uid="uid://cnnw0ll3vsh1" path="res://hurt_overlay.gd" id="4_hqns4"]
 [ext_resource type="Script" uid="uid://08s2f45edpof" path="res://HitBox.gd" id="6_kdubu"]
 [ext_resource type="Script" uid="uid://c834dsubnprbm" path="res://coin.gd" id="7_rj586"]
 [ext_resource type="Texture2D" uid="uid://g3b7my7jhyx" path="res://Sprites/coin1_16x16.png" id="8_4d7sh"]
-[ext_resource type="AudioStream" uid="uid://bt2a7c7p1susq" path="res://audio/music/time_for_adventure.mp3" id="10_ir8iy"]
-[ext_resource type="Script" uid="uid://chc8y7sunh6wy" path="res://camera_2d.gd" id="12_x0ka3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0e48y"]
 size = Vector2(113, 20.75)
@@ -243,6 +239,8 @@ texture = ExtResource("1_wtcfe")
 position = Vector2(25, 135)
 collision_layer = 2
 script = ExtResource("2_0hol4")
+gravity = null
+jump_force = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player_1" unique_id=410754186]
 shape = SubResource("RectangleShape2D_epypp")
@@ -264,15 +262,8 @@ script = ExtResource("3_q6r6c")
 shape = SubResource("RectangleShape2D_kdubu")
 debug_color = Color(0.87641364, 0.3289491, 0.2685695, 0.41960785)
 
-[node name="hurt overlay" type="CanvasLayer" parent="player_1/Hurt Box" unique_id=1031418204]
+[node name="CanvasLayer" type="CanvasLayer" parent="player_1/Hurt Box" unique_id=1031418204]
 layer = 0
-script = ExtResource("4_hqns4")
-
-[node name="ColorRect" type="ColorRect" parent="player_1/Hurt Box/hurt overlay" unique_id=1610133547]
-offset_right = 320.0
-offset_bottom = 179.0
-color = Color(0.79607844, 0, 0, 0.5647059)
-metadata/_edit_use_anchors_ = true
 
 [node name="ProgressBar" type="ProgressBar" parent="player_1/Hurt Box" unique_id=1904997194]
 anchors_preset = 10
@@ -290,8 +281,7 @@ show_percentage = false
 script = SubResource("GDScript_kdubu")
 metadata/_edit_use_anchors_ = true
 
-[node name="Collectsound" type="AudioStreamPlayer2D" parent="player_1" unique_id=2091841361]
-stream = ExtResource("4_4d7sh")
+[node name="Collect sound" type="AudioStreamPlayer2D" parent="player_1" unique_id=2091841361]
 
 [node name="Jump sound" type="AudioStreamPlayer2D" parent="player_1" unique_id=111171663]
 stream = SubResource("AudioStreamWAV_rj586")
@@ -303,6 +293,8 @@ stream = SubResource("AudioStreamWAV_4d7sh")
 position = Vector2(176, 80)
 collision_layer = 4
 script = ExtResource("2_0e48y")
+patrol_speed = null
+gravity = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemy1" unique_id=1365880978]
 shape = SubResource("RectangleShape2D_epypp")
@@ -383,12 +375,3 @@ frame_progress = 0.7066952
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="coin2" unique_id=1848724796]
 shape = SubResource("CircleShape2D_gt76g")
-
-[node name="BackGroundMusic" type="AudioStreamPlayer" parent="." unique_id=1272222122]
-stream = ExtResource("10_ir8iy")
-autoplay = true
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1193081217 node_paths=PackedStringArray("player")]
-position = Vector2(159, 89)
-script = ExtResource("12_x0ka3")
-player = NodePath("../player_1")

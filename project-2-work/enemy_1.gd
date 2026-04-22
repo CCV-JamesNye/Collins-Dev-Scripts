@@ -2,13 +2,14 @@ extends CharacterBody2D
 
 @export var patrol_speed : float = 30.0
 @export var gravity : float = 980.0
-
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var floor_detector: RayCast2D = $"floor detector"
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var detection_range: Area2D = $"detection range"
 @onready var chase_timer: Timer = $ChaseTimer
 @onready var idle_timer: Timer = $IdleTimer
+
+
 
 var direction : Vector2 = Vector2.RIGHT
 

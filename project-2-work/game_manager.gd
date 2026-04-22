@@ -2,6 +2,7 @@ extends Node
 
 var lives : int = 3
 var coins : int = 0
+signal coin_pickup
 
 func is_game_over() -> bool:
 	coins = 0
@@ -15,6 +16,7 @@ func is_game_over() -> bool:
 
 func coin_collected () -> void:
 	coins += 1
+	coin_pickup.emit()
 	if coins >= 3:
 		SceneTransition.load_scene("res://Transition/Victory_screen.tscn")
 		reset_game()
