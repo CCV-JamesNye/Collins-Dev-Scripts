@@ -30,7 +30,7 @@ func _take_damage (damage: int) -> void:
 	printerr (health)
 	hurt_overlay.screen_flash()
 	player_hurt.emit()
-	effect_player.play("Hurt sound")
+	hurt_sound.play()
 	health_update.emit( health )
 	if health <= 0:
 		die()

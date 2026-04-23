@@ -274,6 +274,19 @@ offset_bottom = 179.0
 color = Color(0.79607844, 0, 0, 0.5647059)
 metadata/_edit_use_anchors_ = true
 
+[node name="CheckBox" type="CheckBox" parent="player_1/Hurt Box/hurt overlay" unique_id=483270518]
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 129.0
+offset_bottom = 30.0
+text = "Enable Music"
+
+[node name="CheckBox2" type="CheckBox" parent="player_1/Hurt Box/hurt overlay" unique_id=483962731]
+offset_left = 189.0
+offset_right = 319.0
+offset_bottom = 31.0
+text = "Enable SFX"
+
 [node name="ProgressBar" type="ProgressBar" parent="player_1/Hurt Box" unique_id=1904997194]
 anchors_preset = 10
 anchor_right = 1.0
@@ -292,12 +305,15 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Collectsound" type="AudioStreamPlayer2D" parent="player_1" unique_id=2091841361]
 stream = ExtResource("4_4d7sh")
+bus = &"SFX"
 
 [node name="Jump sound" type="AudioStreamPlayer2D" parent="player_1" unique_id=111171663]
 stream = SubResource("AudioStreamWAV_rj586")
+bus = &"SFX"
 
 [node name="Hurt sound" type="AudioStreamPlayer2D" parent="player_1" unique_id=1889232105]
 stream = SubResource("AudioStreamWAV_4d7sh")
+bus = &"SFX"
 
 [node name="enemy1" type="CharacterBody2D" parent="." unique_id=390271149]
 position = Vector2(176, 80)
@@ -346,6 +362,7 @@ shape = SubResource("RectangleShape2D_d21ai")
 position = Vector2(296, 141)
 collision_layer = 0
 collision_mask = 2
+audio_bus_name = &"SFX"
 script = ExtResource("7_rj586")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="coin" unique_id=979476279]
@@ -387,6 +404,7 @@ shape = SubResource("CircleShape2D_gt76g")
 [node name="BackGroundMusic" type="AudioStreamPlayer" parent="." unique_id=1272222122]
 stream = ExtResource("10_ir8iy")
 autoplay = true
+bus = &"Music"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1193081217 node_paths=PackedStringArray("player")]
 position = Vector2(159, 89)
