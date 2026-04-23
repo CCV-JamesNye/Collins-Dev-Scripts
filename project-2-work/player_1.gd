@@ -13,6 +13,8 @@ var speed : float = 200
 @onready var jump_sound: AudioStreamPlayer2D = $"Jump sound"
 @onready var effect_player: AnimationPlayer = $"Effect Player"
 @onready var hurt_overlay: CanvasLayer = $"../player_1/Hurt Box/hurt overlay"
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+
 
 var health : int = 3
 var max_health : int = 3
@@ -38,16 +40,27 @@ func _take_damage (damage: int) -> void:
 func _physics_process(delta: float) -> void:
 	if !is_on_floor():
 		velocity.y += gravity * delta
-	# Store Direction
+		if animated_sprite_2d.animation != "Jump":
+			animated_sprite_2d.play("Jump")
+	
 	var direction : Vector2 = Vector2.ZERO
-
-	# Read input
 	if Input.is_action_pressed("move_right"):
 		direction.x += 1
-	if Input.is_action_pressed("move_left"):
+		animated_sprite_2d.flip_h = false
+	elif Input.is_action_pressed("move_left"):
 		direction.x -= 1
-	
-	velocity.x = direction.normalized().x * speed
+		animated_sprite_2d.flip_h = true
+
+	if is_on_floor():
+		if direction.x != 0:
+			if animated_sprite_2d.animation != "Walking":
+				animated_sprite_2d.play("Walking")
+		else:
+			if animated_sprite_2d.animation != "Idle":
+				animated_sprite_2d.play("Idle")
+
+	# 4. Apply Movement
+	velocity.x = direction.x * speed # Direction is already -1, 0, or 1
 	move_and_slide()
 func _unhandled_input(event: InputEvent) -> void:
 		if event.is_action_pressed("jump") and is_on_floor():

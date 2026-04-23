@@ -3,9 +3,8 @@ extends CharacterBody2D
 @export var patrol_speed : float = 30.0
 @export var chase_speed_multiplier : float = 2
 @export var gravity : float = 980.0
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var floor_detector: RayCast2D = $"floor detector"
-@onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var detection_range: Area2D = $"detection range"
 @onready var chase_timer: Timer = $ChaseTimer
 @onready var idle_timer: Timer = $IdleTimer
@@ -42,24 +41,24 @@ func _physics_process(delta: float) -> void:
 		if direction == Vector2.RIGHT:
 			direction=Vector2.LEFT
 			floor_detector.position.x= -6
-			sprite_2d.flip_h = false
+			animated_sprite_2d.flip_h = true
 		else:
 			direction=Vector2.RIGHT
 			floor_detector.position.x= 6
-			sprite_2d.flip_h = true
+			animated_sprite_2d.flip_h = false
 
 func handle_idle() -> void:
 	velocity.x = 0
-	animation_player.play("idle")
+	animated_sprite_2d.play("Idle")
 	pass
 
 func handle_patrol() -> void:
-	animation_player.play("walk")
+	animated_sprite_2d.play("Walking")
 	velocity.x=direction.x* (patrol_speed + chase_speed_multiplier)
 	pass
 
 func handle_chase () -> void:
-	animation_player.play("walk")
+	animated_sprite_2d.play("Walking")
 	velocity.x=direction.x * (patrol_speed * 3)
 	pass
 	
