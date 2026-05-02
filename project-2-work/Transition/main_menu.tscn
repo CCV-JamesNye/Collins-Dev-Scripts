@@ -76,6 +76,14 @@ size_flags_vertical = 3
 theme_override_font_sizes/font_size = 6
 text = "Start Game"
 
+[node name="resume_game" type="Button" parent="MarginContainer/Panel/MarginContainer/VBoxContainer" unique_id=1839122965]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 6
+text = "Resume Game"
+
 [node name="quit_game" type="Button" parent="MarginContainer/Panel/MarginContainer/VBoxContainer" unique_id=555630823]
 custom_minimum_size = Vector2(50, 10)
 layout_mode = 2

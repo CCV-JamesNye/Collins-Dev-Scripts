@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bqash4d23ihxn"]
 
-[ext_resource type="Script" uid="uid://c8ghwenpugmo2" path="res://game_over.gd" id="1_3ohoe"]
+[ext_resource type="Script" uid="uid://c8ghwenpugmo2" path="res://Transition/game_over.gd" id="1_3ohoe"]
 
 [node name="Victory Screen" type="CanvasLayer" unique_id=1911816971]
 process_mode = 3

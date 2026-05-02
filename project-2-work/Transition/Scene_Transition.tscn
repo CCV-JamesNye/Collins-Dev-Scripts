@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://d2axg40htfbrt"]
 
 [ext_resource type="Script" uid="uid://c70j7w2nghhhj" path="res://Transition/scene_transition.gd" id="1_lbeq7"]
+[ext_resource type="PackedScene" uid="uid://b3toj5jkxixgv" path="res://node_2d.tscn" id="2_pq313"]
+[ext_resource type="PackedScene" uid="uid://dg8au1ik4255d" path="res://level_2.tscn" id="3_0gev4"]
+[ext_resource type="PackedScene" uid="uid://nncfj4ci4vkd" path="res://level_3.tscn" id="4_s26ug"]
 
 [sub_resource type="Animation" id="Animation_cdhai"]
 resource_name = "Fade to black"
@@ -61,6 +64,7 @@ _data = {
 [node name="SceneTransition" type="CanvasLayer" unique_id=577314713]
 process_mode = 3
 script = ExtResource("1_lbeq7")
+levels = Array[PackedScene]([ExtResource("2_pq313"), ExtResource("3_0gev4"), ExtResource("4_s26ug")])
 
 [node name="Control" type="Control" parent="." unique_id=1368476749]
 layout_mode = 3

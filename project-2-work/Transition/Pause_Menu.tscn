@@ -53,3 +53,9 @@ layout_mode = 2
 text = "This game will resume when you 
 unpause it."
 horizontal_alignment = 1
+
+[node name="quit" type="Button" parent="Control/MarginContainer" unique_id=672732142]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "Quit to Menu"

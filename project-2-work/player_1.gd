@@ -4,7 +4,7 @@ extends CharacterBody2D
 signal health_update (int)
 signal player_hurt
 
-var speed : float = 200
+var speed : float = 150
 @export var gravity : float = 980.0
 @export var jump_force : float = -400
 @onready var hurt_box: Area2D = $"Hurt Box"
@@ -14,6 +14,8 @@ var speed : float = 200
 @onready var effect_player: AnimationPlayer = $"Effect Player"
 @onready var hurt_overlay: CanvasLayer = $"../player_1/Hurt Box/hurt overlay"
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+
+
 
 
 var health : int = 3

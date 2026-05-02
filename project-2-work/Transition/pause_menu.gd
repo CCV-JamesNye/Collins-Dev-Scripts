@@ -1,11 +1,13 @@
 extends CanvasLayer
 
 @onready var pause_button: Button = $"Control/MarginContainer/HBoxContainer/pause button"
+@onready var quit: Button = $Control/MarginContainer/quit
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	_hide_menu()
-	
+	quit.pressed.connect(_quit_to_menu)
 	pass # Replace with function body.
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -23,3 +25,8 @@ func _hide_menu () -> void:
 		pause_button.pressed.disconnect(_hide_menu)
 	visible=false
 	get_tree().paused = false
+
+func _quit_to_menu () -> void:
+	_hide_menu()
+	SceneTransition.load_scene("res://Transition/main_menu.tscn")
+	
