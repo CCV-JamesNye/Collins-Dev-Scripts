@@ -436,4 +436,5 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_755hc")
 
 [node name="swamp_base_tiles" type="TileMapLayer" unique_id=36250504]
+z_index = 1
 tile_set = SubResource("TileSet_lbmf8")

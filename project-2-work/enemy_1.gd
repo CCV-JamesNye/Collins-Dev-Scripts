@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+signal health_update(current_health: int)
+
 @export var patrol_speed : float = 30.0
 @export var chase_speed_multiplier : float = 2
 @export var gravity : float = 980.0
@@ -8,23 +10,33 @@ extends CharacterBody2D
 @onready var detection_range: Area2D = $"detection range"
 @onready var chase_timer: Timer = $ChaseTimer
 @onready var idle_timer: Timer = $IdleTimer
+@export var max_health: int = 3
+@onready var progress_bar: ProgressBar = $"hurt box/ProgressBar"
+@onready var hurt_box: Area2D = $"hurt box"
 
-
-
+var health: int = 3
 var direction : Vector2 = Vector2.RIGHT
+var is_dead : bool = false
 
 enum STATE {IDLE, PATROL, CHASE}
 
 var current_state : STATE = STATE.IDLE
 
 func _ready() -> void:
+	$"hurt box".area_entered.connect(_on_hurtbox_area_entered)
+	add_to_group("enemies")
+	if progress_bar:
+		progress_bar.max_value = max_health
+		progress_bar.value = health
 	detection_range.body_entered.connect( _check_for_player)
 	detection_range.body_exited.connect( _player_left )
 	chase_timer.timeout.connect ( _stop_chasing )
 	idle_timer.timeout.connect(_start_patrol)
 	idle_timer.start()
+	
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
+	if is_dead: 
+		return
 	if not is_on_floor():
 		velocity.y += gravity * delta
 
@@ -79,3 +91,30 @@ func _stop_chasing () -> void:
 	
 func _start_patrol () -> void:
 	current_state = STATE.PATROL
+
+func take_damage(amount: int):
+	if is_dead: return
+	if progress_bar:
+		progress_bar.value = health
+	health -= amount
+	health_update.emit(health)
+	if health <= 0:
+		is_dead = true
+		die()
+
+func die():
+	velocity = Vector2.ZERO
+	is_dead = true
+	if progress_bar:
+		progress_bar.value = health
+		health_update.emit(health)
+	if hurt_box: 
+		hurt_box.set_deferred("monitoring", false)
+		hurt_box.set_deferred("monitorable", false)
+	if animated_sprite_2d.sprite_frames.has_animation("Death"):
+		animated_sprite_2d.play("Death")
+		await animated_sprite_2d.animation_finished
+		queue_free()
+
+func _on_hurtbox_area_entered(area: Area2D) -> void:
+	print("Something entered the enemy's hurtbox!")

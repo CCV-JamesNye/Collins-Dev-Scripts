@@ -6,8 +6,12 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if SceneTransition.current_level_index == 0:
-		resume_game.disabled=true
+	var index = SceneTransition.current_level_index
+	var total_levels = SceneTransition.levels.size()
+	if index == 0 or index >= total_levels:
+		resume_game.disabled = true
+	else:
+		resume_game.disabled = false
 	start_game.pressed.connect ( _start_game)
 	resume_game.pressed.connect(_resume_game)
 	quit_game.pressed.connect ( _quit_game)
