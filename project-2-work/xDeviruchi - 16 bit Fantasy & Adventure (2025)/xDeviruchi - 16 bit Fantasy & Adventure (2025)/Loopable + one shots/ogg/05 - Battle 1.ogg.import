@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bqyekvyj1i4wx"
+path="res://.godot/imported/05 - Battle 1.ogg-1960c2c3824a244138a4944e01ca62ba.oggvorbisstr"
+
+[deps]
+
+source_file="res://xDeviruchi - 16 bit Fantasy & Adventure (2025)/xDeviruchi - 16 bit Fantasy & Adventure (2025)/Loopable + one shots/ogg/05 - Battle 1.ogg"
+dest_files=["res://.godot/imported/05 - Battle 1.ogg-1960c2c3824a244138a4944e01ca62ba.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

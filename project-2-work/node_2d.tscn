@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://im1obokvpxn" path="res://Tile sets/free-swamp-game-tileset-pixel-art/2 Background/Layers/2.png" id="19_e8dv2"]
 [ext_resource type="Texture2D" uid="uid://dfs3fb8p184cj" path="res://Tile sets/free-swamp-game-tileset-pixel-art/2 Background/Layers/3.png" id="20_2nhjh"]
 [ext_resource type="Texture2D" uid="uid://brji15kkl64od" path="res://Tile sets/free-swamp-game-tileset-pixel-art/3 Objects/Pointers/8.png" id="20_2u7jv"]
+[ext_resource type="PackedScene" uid="uid://lfpqoc4jsm48" path="res://enemy_2.tscn" id="21_7vxoj"]
 [ext_resource type="Texture2D" uid="uid://d1mm2k4lar7oc" path="res://Tile sets/free-swamp-game-tileset-pixel-art/3 Objects/Ridges/4.png" id="21_24dk6"]
 [ext_resource type="Texture2D" uid="uid://bbxx2dw443tel" path="res://Tile sets/free-swamp-game-tileset-pixel-art/2 Background/Layers/4.png" id="21_bjha6"]
 [ext_resource type="Texture2D" uid="uid://bh8eawqsg32uu" path="res://Tile sets/free-swamp-game-tileset-pixel-art/2 Background/Layers/5.png" id="22_gt76g"]
@@ -465,7 +466,8 @@ animations = [{
 texture_filter = 1
 
 [node name="coin" type="Area2D" parent="." unique_id=720975002]
-position = Vector2(437, 128)
+visible = false
+position = Vector2(600, 277)
 collision_layer = 0
 collision_mask = 2
 audio_bus_name = &"SFX"
@@ -605,6 +607,7 @@ scale = Vector2(0.5555556, 0.55246913)
 texture = ExtResource("20_2nhjh")
 
 [node name="Parallax2D3" type="Parallax2D" parent="." unique_id=486788879]
+z_index = 3
 scroll_scale = Vector2(1, 0)
 repeat_size = Vector2(320, 0)
 repeat_times = 6
@@ -616,6 +619,7 @@ scale = Vector2(0.55555564, 0.62654316)
 texture = ExtResource("21_bjha6")
 
 [node name="Parallax2D4" type="Parallax2D" parent="." unique_id=181328977]
+z_index = 4
 scroll_scale = Vector2(1.2, 0)
 repeat_size = Vector2(320, 0)
 repeat_times = 6
@@ -679,3 +683,40 @@ position = Vector2(19, 113)
 position = Vector2(392.99997, 66.99999)
 collision_layer = 2
 collision_mask = 1
+
+[node name="Label" type="Label" parent="." unique_id=1225461379]
+offset_left = 1.0
+offset_top = 63.0
+offset_right = 84.0
+offset_bottom = 112.0
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.011764706, 0.011764706, 0.011764706, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "A for Left
+D for Right"
+
+[node name="Label2" type="Label" parent="." unique_id=890162790]
+offset_left = 84.0
+offset_top = 63.0
+offset_right = 160.0
+offset_bottom = 94.0
+theme_override_colors/font_color = Color(0.011764706, 0.011764706, 0.011764706, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "Press Spacebar 
+to Jump"
+
+[node name="Label3" type="Label" parent="." unique_id=1899533441]
+offset_left = 252.0
+offset_top = 39.0
+offset_right = 307.0
+offset_bottom = 70.0
+theme_override_colors/font_color = Color(0.011764706, 0.011764706, 0.011764706, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "Press Enter
+to Attack"
+
+[node name="enemy2" parent="." unique_id=935590606 instance=ExtResource("21_7vxoj")]
+position = Vector2(779, 94)

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bbddjm02fvexf"
+path="res://.godot/imported/18 - Never Give Up.ogg-cf4b665f03ab626fb45b899b8169b537.oggvorbisstr"
+
+[deps]
+
+source_file="res://xDeviruchi - 16 bit Fantasy & Adventure (2025)/xDeviruchi - 16 bit Fantasy & Adventure (2025)/Loopable + one shots/ogg/18 - Never Give Up.ogg"
+dest_files=["res://.godot/imported/18 - Never Give Up.ogg-cf4b665f03ab626fb45b899b8169b537.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

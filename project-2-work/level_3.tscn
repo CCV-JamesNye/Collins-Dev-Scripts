@@ -4,6 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://v3gmkhnqa3m7" path="res://Tile sets/Dungeon Tile Set.png" id="2_kmy7e"]
 [ext_resource type="PackedScene" uid="uid://c2jrya50n13m6" path="res://player_1.tscn" id="6_6p2dc"]
 [ext_resource type="Script" uid="uid://dmquqfjt2e8y2" path="res://spike_dmage_area.gd" id="7_fmu3g"]
+[ext_resource type="AudioStream" uid="uid://bn7ti738rymea" path="res://xDeviruchi - 16 bit Fantasy & Adventure (2025)/xDeviruchi - 16 bit Fantasy & Adventure (2025)/mp3/10 - Lost Shrine.mp3" id="8_7ds5r"]
+[ext_resource type="PackedScene" uid="uid://3w8vei43mtoh" path="res://enemy_4.tscn" id="9_b60u5"]
+[ext_resource type="PackedScene" uid="uid://cx465vgifwy4r" path="res://enemy_3.tscn" id="10_kmy7e"]
 [ext_resource type="Script" uid="uid://cxxptblrw6unc" path="res://goal.gd" id="11_ghrvs"]
 [ext_resource type="Texture2D" uid="uid://cmxefhtsy46tf" path="res://Tile sets/free-swamp-game-tileset-pixel-art/4 Animated objects/Flag.png" id="12_jvy75"]
 [ext_resource type="Script" uid="uid://dnu0qs0o0psgh" path="res://level_goal.gd" id="13_g0tlw"]
@@ -336,3 +339,26 @@ shape = SubResource("RectangleShape2D_ghrvs")
 
 [node name="Timer" type="Timer" parent="Spikes7" unique_id=1701890507]
 wait_time = 1.5
+
+[node name="BackGroundMusic" type="AudioStreamPlayer" parent="." unique_id=419213229]
+stream = ExtResource("8_7ds5r")
+autoplay = true
+bus = &"Music"
+
+[node name="enemy1" parent="." unique_id=1662548854 instance=ExtResource("9_b60u5")]
+position = Vector2(628.00006, 484)
+
+[node name="enemy2" parent="." unique_id=361108949 instance=ExtResource("9_b60u5")]
+position = Vector2(2116, 548)
+
+[node name="enemy3" parent="." unique_id=465537390 instance=ExtResource("9_b60u5")]
+position = Vector2(1891.9999, 660.99994)
+
+[node name="enemy4" parent="." unique_id=1078173199 instance=ExtResource("10_kmy7e")]
+position = Vector2(425.99997, 276)
+
+[node name="enemy5" parent="." unique_id=1746585026 instance=ExtResource("10_kmy7e")]
+position = Vector2(1021, 517)
+
+[node name="enemy6" parent="." unique_id=169094620 instance=ExtResource("10_kmy7e")]
+position = Vector2(1161.0001, 515.00006)

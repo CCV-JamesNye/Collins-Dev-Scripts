@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://trvo37ubv4eh"
+path="res://.godot/imported/12 - Frozen Abyss.ogg-ab0f019609d1b91e9e9ac2869e6c33e0.oggvorbisstr"
+
+[deps]
+
+source_file="res://xDeviruchi - 16 bit Fantasy & Adventure (2025)/xDeviruchi - 16 bit Fantasy & Adventure (2025)/Loopable + one shots/ogg/12 - Frozen Abyss.ogg"
+dest_files=["res://.godot/imported/12 - Frozen Abyss.ogg-ab0f019609d1b91e9e9ac2869e6c33e0.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

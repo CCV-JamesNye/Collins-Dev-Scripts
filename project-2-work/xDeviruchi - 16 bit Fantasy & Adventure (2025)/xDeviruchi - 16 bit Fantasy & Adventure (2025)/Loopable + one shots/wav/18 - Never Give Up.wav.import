@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cf0ocen1gr4cr"
+path="res://.godot/imported/18 - Never Give Up.wav-b7ac13839fd59669e08e0563c0c5c751.sample"
+
+[deps]
+
+source_file="res://xDeviruchi - 16 bit Fantasy & Adventure (2025)/xDeviruchi - 16 bit Fantasy & Adventure (2025)/Loopable + one shots/wav/18 - Never Give Up.wav"
+dest_files=["res://.godot/imported/18 - Never Give Up.wav-b7ac13839fd59669e08e0563c0c5c751.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

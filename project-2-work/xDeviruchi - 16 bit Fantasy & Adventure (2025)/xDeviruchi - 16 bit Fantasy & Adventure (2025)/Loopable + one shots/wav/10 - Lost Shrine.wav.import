@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://duj63ek086ade"
+path="res://.godot/imported/10 - Lost Shrine.wav-2fdf254026a4dd76f7f73a160f1fcb79.sample"
+
+[deps]
+
+source_file="res://xDeviruchi - 16 bit Fantasy & Adventure (2025)/xDeviruchi - 16 bit Fantasy & Adventure (2025)/Loopable + one shots/wav/10 - Lost Shrine.wav"
+dest_files=["res://.godot/imported/10 - Lost Shrine.wav-2fdf254026a4dd76f7f73a160f1fcb79.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

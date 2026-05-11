@@ -14,10 +14,15 @@
 [ext_resource type="Texture2D" uid="uid://g3b7my7jhyx" path="res://Sprites/coin1_16x16.png" id="17_jcnlr"]
 [ext_resource type="Texture2D" uid="uid://bh8eawqsg32uu" path="res://Tile sets/free-swamp-game-tileset-pixel-art/2 Background/Layers/5.png" id="18_i558w"]
 [ext_resource type="PackedScene" uid="uid://wo22gl5urhs8" path="res://Tile sets/dungeon_tile_map.tscn" id="18_jcnlr"]
+[ext_resource type="AudioStream" uid="uid://bufw3v2agqarc" path="res://xDeviruchi - 16 bit Fantasy & Adventure (2025)/xDeviruchi - 16 bit Fantasy & Adventure (2025)/mp3/04 - Silent Forest.mp3" id="19_5kfcu"]
 [ext_resource type="Texture2D" uid="uid://v3gmkhnqa3m7" path="res://Tile sets/Dungeon Tile Set.png" id="19_wvr33"]
+[ext_resource type="PackedScene" uid="uid://dhn1xmugt2qty" path="res://enemy_1.tscn" id="20_i558w"]
 [ext_resource type="Script" uid="uid://cxxptblrw6unc" path="res://goal.gd" id="20_sgm4o"]
 [ext_resource type="Texture2D" uid="uid://cmxefhtsy46tf" path="res://Tile sets/free-swamp-game-tileset-pixel-art/4 Animated objects/Flag.png" id="21_6r3eb"]
+[ext_resource type="PackedScene" uid="uid://lfpqoc4jsm48" path="res://enemy_2.tscn" id="21_sgm4o"]
 [ext_resource type="Script" uid="uid://dnu0qs0o0psgh" path="res://level_goal.gd" id="22_2pufk"]
+[ext_resource type="PackedScene" uid="uid://cx465vgifwy4r" path="res://enemy_3.tscn" id="22_6r3eb"]
+[ext_resource type="PackedScene" uid="uid://3w8vei43mtoh" path="res://enemy_4.tscn" id="23_2pufk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_78pok"]
 texture = ExtResource("2_5hnhx")
@@ -640,7 +645,7 @@ scale = Vector2(0.16666667, 0.16666667)
 texture = ExtResource("6_s77qv")
 
 [node name="invis wall" type="StaticBody2D" parent="." unique_id=1847269403]
-position = Vector2(-9, 66)
+position = Vector2(-49, 68)
 collision_layer = 3
 collision_mask = 3
 
@@ -650,7 +655,8 @@ rotation = 1.5707964
 shape = SubResource("WorldBoundaryShape2D_5kfcu")
 
 [node name="coin2" type="Area2D" parent="." unique_id=1690985764]
-position = Vector2(576, 96)
+visible = false
+position = Vector2(636, 255)
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("16_lvfll")
@@ -685,7 +691,7 @@ animation = &"goal_flag"
 script = ExtResource("22_2pufk")
 
 [node name="player_1" parent="." unique_id=1547821587 instance=ExtResource("15_5hnhx")]
-position = Vector2(42, 114)
+position = Vector2(-1, 114)
 
 [node name="Kill Box" type="Area2D" parent="." unique_id=2102046986]
 position = Vector2(177, 153)
@@ -767,3 +773,24 @@ z_index = 5
 position = Vector2(160.75002, 113.25)
 scale = Vector2(0.55642366, 0.55401236)
 texture = ExtResource("18_i558w")
+
+[node name="BackGroundMusic" type="AudioStreamPlayer" parent="." unique_id=1998463238]
+stream = ExtResource("19_5kfcu")
+autoplay = true
+bus = &"Music"
+
+[node name="enemy1" parent="." unique_id=1662548854 instance=ExtResource("20_i558w")]
+position = Vector2(588, 1.9999999)
+collision_mask = 1
+
+[node name="enemy2" parent="." unique_id=1093477990 instance=ExtResource("21_sgm4o")]
+position = Vector2(741, -75.99999)
+
+[node name="enemy3" parent="." unique_id=568918401 instance=ExtResource("22_6r3eb")]
+position = Vector2(1087.9999, -141.99998)
+
+[node name="enemy5" parent="." unique_id=2029979171 instance=ExtResource("21_sgm4o")]
+position = Vector2(1278.0001, -211)
+
+[node name="enemy4" parent="." unique_id=1192485819 instance=ExtResource("23_2pufk")]
+position = Vector2(1378, -205)

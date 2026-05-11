@@ -35,29 +35,39 @@ func _ready() -> void:
 	idle_timer.start()
 	
 func _physics_process(delta: float) -> void:
-	if is_dead: 
+	if is_dead:
 		return
+		
 	if not is_on_floor():
 		velocity.y += gravity * delta
-
-	match current_state: 
+		
+	match current_state:
 		STATE.IDLE:
 			handle_idle()
 		STATE.PATROL:
 			handle_patrol()
 		STATE.CHASE:
 			handle_chase()
-
+			
 	move_and_slide()
-	if !floor_detector.is_colliding():
-		if direction == Vector2.RIGHT:
-			direction=Vector2.LEFT
-			floor_detector.position.x= -6
-			animated_sprite_2d.flip_h = true
-		else:
-			direction=Vector2.RIGHT
-			floor_detector.position.x= 6
-			animated_sprite_2d.flip_h = false
+
+	if is_on_wall():
+		var normal = get_wall_normal()
+		if abs(normal.x) > 0.9:
+			flip_direction()
+	if is_on_floor() and not floor_detector.is_colliding():
+		flip_direction()
+
+func flip_direction():
+	if direction == Vector2.RIGHT:
+		direction = Vector2.LEFT
+		floor_detector.position.x = -6
+		animated_sprite_2d.flip_h = true
+	else:
+		direction = Vector2.RIGHT
+		floor_detector.position.x = 6
+		animated_sprite_2d.flip_h = false
+	global_position.x += direction.x * 2
 
 func handle_idle() -> void:
 	velocity.x = 0

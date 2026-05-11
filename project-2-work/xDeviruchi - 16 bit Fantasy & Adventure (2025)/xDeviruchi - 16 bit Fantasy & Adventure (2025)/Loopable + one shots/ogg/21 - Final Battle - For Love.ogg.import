@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bq45768hpu623"
+path="res://.godot/imported/21 - Final Battle - For Love.ogg-d824011a29b48f773fb2c84dd088e1c5.oggvorbisstr"
+
+[deps]
+
+source_file="res://xDeviruchi - 16 bit Fantasy & Adventure (2025)/xDeviruchi - 16 bit Fantasy & Adventure (2025)/Loopable + one shots/ogg/21 - Final Battle - For Love.ogg"
+dest_files=["res://.godot/imported/21 - Final Battle - For Love.ogg-d824011a29b48f773fb2c84dd088e1c5.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

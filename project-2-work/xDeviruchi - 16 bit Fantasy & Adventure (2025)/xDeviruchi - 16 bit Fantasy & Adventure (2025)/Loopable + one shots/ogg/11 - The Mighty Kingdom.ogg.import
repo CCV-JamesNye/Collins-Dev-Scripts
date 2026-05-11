@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dx6gmejgfgv6a"
+path="res://.godot/imported/11 - The Mighty Kingdom.ogg-2f60e15476fc1a9d60b3d819e6d818d9.oggvorbisstr"
+
+[deps]
+
+source_file="res://xDeviruchi - 16 bit Fantasy & Adventure (2025)/xDeviruchi - 16 bit Fantasy & Adventure (2025)/Loopable + one shots/ogg/11 - The Mighty Kingdom.ogg"
+dest_files=["res://.godot/imported/11 - The Mighty Kingdom.ogg-2f60e15476fc1a9d60b3d819e6d818d9.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
