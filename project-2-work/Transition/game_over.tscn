@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://t6y3n3cbqtch"]
+[gd_scene format=3 uid="uid://c6cv6mdel0kd1"]
 
-[ext_resource type="Script" uid="uid://c8ghwenpugmo2" path="res://game_over.gd" id="1_y26ei"]
+[ext_resource type="Script" uid="uid://c8ghwenpugmo2" path="res://Transition/game_over.gd" id="1_y26ei"]
 
 [node name="game_over" type="CanvasLayer" unique_id=1911816971]
 process_mode = 3
@@ -53,7 +53,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 3
 text = "You Lost the Game!
-RIP..?"
+Try again?"
 horizontal_alignment = 1
 
 [node name="Main Menu Return" type="Button" parent="Control/MarginContainer/VBoxContainer" unique_id=2016471664]

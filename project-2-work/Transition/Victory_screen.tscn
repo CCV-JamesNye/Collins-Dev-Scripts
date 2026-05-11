@@ -50,7 +50,7 @@ horizontal_alignment = 1
 [node name="Label" type="Label" parent="Control/MarginContainer/VBoxContainer" unique_id=820888142]
 layout_mode = 2
 size_flags_vertical = 6
-text = "You have reached the end, rest easy."
+text = "You have reached the treasure, rest easy."
 horizontal_alignment = 1
 
 [node name="Main Menu Return" type="Button" parent="Control/MarginContainer/VBoxContainer" unique_id=2016471664]
